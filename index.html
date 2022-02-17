@@ -46,7 +46,7 @@
                       class="bg-slate-300 col-span-2 rounded py-3 pl-10"
                       type="number"
                       name=""
-                      id=""
+                      id="income-input"
                     />
                   </div>
                 </div>
@@ -64,7 +64,7 @@
                       class="bg-slate-300 col-span-2 rounded py-3 pl-10"
                       type="number"
                       name=""
-                      id=""
+                      id="food-input"
                     />
                   </div>
                 </div>
@@ -76,7 +76,7 @@
                       class="bg-slate-300 col-span-2 rounded py-3 pl-10"
                       type="number"
                       name=""
-                      id=""
+                      id="rent-input"
                     />
                   </div>
                 </div>
@@ -88,13 +88,14 @@
                       class="bg-slate-300 col-span-2 rounded py-3 pl-10"
                       type="number"
                       name=""
-                      id=""
+                      id="clothes-input"
                     />
                   </div>
                 </div>
                 <!-- row 4 -->
                 <div>
                   <button
+                    onclick="calculate()"
                     class="bg-sky-500/100 text-white font-bold px-14 py-2 rounded"
                   >
                     Calculate
@@ -104,7 +105,9 @@
             </div>
             <!-- Calculate part -->
             <div>
-              <p class="text-xl font-bold py-3">Total Expenses: 0.</p>
+              <p class="text-xl font-bold py-3">
+                Total Expenses: <span id="total-expenses">0.</span>
+              </p>
               <p class="text-xl font-bold">Balance: 0.</p>
 
               <div class="grid grid-rows-1 py-5 justify-items-center">
