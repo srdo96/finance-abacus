@@ -53,7 +53,7 @@
                 </div>
               </div>
               <p id="income-err" class="hidden">Enter positive number.</p>
-              <p id="income-update-err" class="hidden">Update income amount.</p>
+              <!-- <p id="income-update-err" class="hidden">Update income amount.</p> -->
             </div>
             <!-- error message -->
             <!-- <p id="income-err-message" class="hidden">
@@ -111,7 +111,8 @@
                     Calculate
                   </button>
                   <p id="err-cal" class="hidden">
-                    Expenses is gatter then balance.
+                    <span>Expenses is gatter then balance.</span> <br />
+                    <span>Update Income or Expenses amount</span>
                   </p>
                 </div>
               </div>
@@ -139,14 +140,15 @@
                   <!-- col 3 -->
                   <div>%</div>
                   <!-- col 4 -->
-                  <!-- <button
+                  <button
                     onclick="saveCalculation()"
-                    class="bg-sky-500/100 col-span-2 text-white font-bold px-8 py-2 rounded"
+                    id="save-btn"
+                    class="bg-blue-700 border-2 col-span-2 text-white font-bold px-8 py-2 rounded"
                     disabled
                   >
                     Save
-                  </button> -->
-                  <div>
+                  </button>
+                  <!-- <div>
                     <button
                       id="save-btn"
                       class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
@@ -176,8 +178,9 @@
                         "
                       ></div>
                     </div>
-                  </div>
+                  </div> -->
                 </div>
+                <p id="percentage-err" class="hidden">Enter positive number.</p>
               </div>
               <p class="text-xl font-bold py-3">
                 Saving Amount: <span id="saving-display">0</span>
