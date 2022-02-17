@@ -1,18 +1,24 @@
 function calculate() {
-  debugger;
+  // debugger;
   const totalExpensesDisplay = document.getElementById("total-expenses");
   const balanceDisplay = document.getElementById("balance");
   const income = getInputValue("income");
   const food = getInputValue("food");
   const rent = getInputValue("rent");
   const clothes = getInputValue("clothes");
+  const incomeInput = document.getElementById("income-input");
 
   const totalExpenses = food + rent + clothes;
   const balance = sub(income, totalExpenses);
   const expensesErr = document.getElementById("err-cal");
-  if (balance < totalExpenses) {
+  const incomeUpdateErr = document.getElementById("income-update-err");
+
+  if (income < totalExpenses) {
     expensesErr.style.display = "block";
     expensesErr.style.color = "red";
+    incomeInput.style.borderColor = "red";
+    incomeUpdateErr.style.display = "block";
+    incomeUpdateErr.style.color = "red";
   } else {
     expensesErr.style.display = "none";
   }
