@@ -108,7 +108,9 @@
               <p class="text-xl font-bold py-3">
                 Total Expenses: <span id="total-expenses">0.</span>
               </p>
-              <p class="text-xl font-bold">Balance: 0.</p>
+              <p class="text-xl font-bold">
+                Balance: <span id="balance">0.</span>
+              </p>
 
               <div class="grid grid-rows-1 py-5 justify-items-center">
                 <div class="grid grid-cols-8 gap-3 items-center">
@@ -119,12 +121,13 @@
                     class="bg-slate-300 col-span-2 rounded py-2 text-center"
                     type="number"
                     name=""
-                    id=""
+                    id="percentage-input"
                   />
                   <!-- col 3 -->
                   <div>%</div>
                   <!-- col 4 -->
                   <button
+                    onclick="saveCalculation()"
                     class="bg-sky-500/100 col-span-2 text-white font-bold px-8 py-2 rounded"
                   >
                     Save
@@ -132,10 +135,10 @@
                 </div>
               </div>
               <p class="text-xl font-bold py-3">
-                Saving Amount: <span>0</span>
+                Saving Amount: <span id="saving-display">0</span>
               </p>
               <p class="text-xl font-bold">
-                Remaining Balance: <span> 0</span>
+                Remaining Balance: <span id="remaining-amount"> 0</span>
               </p>
             </div>
           </section>
