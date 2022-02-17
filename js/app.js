@@ -67,10 +67,20 @@ function saveCalculation() {
   const saveAmount = income * (percentage / 100);
   const savingDisplay = document.getElementById("saving-display");
   savingDisplay.innerText = saveAmount;
+  const percentageValue = document.getElementById("percentage-input").value;
 
   const balanceDisplay = document.getElementById("balance");
   const balance = parseInt(balanceDisplay.innerText);
   const remainingAmount = balance - saveAmount;
   const remainingAmountDisplay = document.getElementById("remaining-amount");
   remainingAmountDisplay.innerText = remainingAmount;
+  if (percentageValue < 0) {
+    savingDisplay.innerText = 0;
+    remainingAmountDisplay.innerText = 0;
+  }
+  if (saveAmount >= balance) {
+    const percentageErr = document.getElementById("percentage-err2").value;
+    percentageErr.style.display = "block";
+    percentageErr.style.color = "red";
+  }
 }
