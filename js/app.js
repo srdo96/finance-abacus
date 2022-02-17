@@ -1,5 +1,4 @@
 function calculate() {
-  // debugger;
   const totalExpensesDisplay = document.getElementById("total-expenses");
   const balanceDisplay = document.getElementById("balance");
   const income = getInputValue("income");
@@ -12,7 +11,6 @@ function calculate() {
   totalExpenses = parseInt(totalExpenses);
   const balance = sub(income, totalExpenses);
   const expensesErr = document.getElementById("err-cal");
-  // const incomeUpdateErr = document.getElementById("income-update-err");
 
   if (income < totalExpenses) {
     balanceDisplay.innerText = 0;
@@ -24,14 +22,13 @@ function calculate() {
     incomeUpdateErr.style.color = "red";
   } else {
     expensesErr.style.display = "none";
-    // incomeUpdateErr.style.display = "none";
+
     balanceDisplay.innerText = balance;
     totalExpensesDisplay.innerText = totalExpenses;
   }
 }
 
 function sub(num1, num2) {
-  // debugger;
   const result = num1 - num2;
   console.log("Result: ", result);
   if (isNaN(result)) {
@@ -44,7 +41,6 @@ function sub(num1, num2) {
 }
 
 function getInputValue(idName) {
-  // debugger;
   const valueText = document.getElementById(idName + "-input");
   const value = parseInt(valueText.value);
   const errorMessage = document.getElementById(idName + "-err");
@@ -60,7 +56,6 @@ function getInputValue(idName) {
   }
 }
 function saveCalculation() {
-  debugger;
   const percentage = getInputValue("percentage");
   const incomeText = document.getElementById("income-input").value;
   const income = parseInt(incomeText);
