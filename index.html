@@ -33,6 +33,7 @@
             alt=""
           />
         </div>
+
         <div class="text-center bg-slate-50 pb-5">
           <section class="grid justify-items-center">
             <!-- Income part -->
@@ -43,15 +44,20 @@
                   <div class="text-right text-xl font-medium">Income:</div>
                   <div>
                     <input
-                      class="bg-slate-300 col-span-2 rounded py-3 pl-10"
-                      type="number"
+                      class="border-2 bg-slate-300 col-span-2 rounded py-3 pl-10"
+                      type="text"
                       name=""
                       id="income-input"
                     />
                   </div>
                 </div>
               </div>
+              <p id="income-err" class="hidden">Enter positive number.</p>
             </div>
+            <!-- error message -->
+            <!-- <p id="income-err-message" class="hidden">
+              Please enter positive number.
+            </p> -->
             <!-- Expenses part -->
             <div>
               <h4 class="text-2xl font-bold p-4">Expenses</h4>
@@ -61,45 +67,51 @@
                   <div class="text-right text-xl font-medium">Food:</div>
                   <div>
                     <input
-                      class="bg-slate-300 col-span-2 rounded py-3 pl-10"
-                      type="number"
+                      class="bg-slate-300 border-2 col-span-2 rounded py-3 pl-10"
+                      type="text"
                       name=""
                       id="food-input"
                     />
                   </div>
                 </div>
+                <p id="food-err" class="hidden">Enter positive number.</p>
                 <!-- row 2 -->
                 <div class="grid grid-cols-3 gap-3 items-center">
                   <div class="text-right text-xl font-medium">Rent:</div>
                   <div>
                     <input
-                      class="bg-slate-300 col-span-2 rounded py-3 pl-10"
-                      type="number"
+                      class="bg-slate-300 border-2 col-span-2 rounded py-3 pl-10"
+                      type="text"
                       name=""
                       id="rent-input"
                     />
                   </div>
                 </div>
+                <p id="rent-err" class="hidden">Enter positive number.</p>
                 <!-- row 3 -->
                 <div class="grid grid-cols-3 gap-3 items-center">
                   <div class="text-right text-xl font-medium">Clothes:</div>
                   <div>
                     <input
-                      class="bg-slate-300 col-span-2 rounded py-3 pl-10"
-                      type="number"
+                      class="bg-slate-300 border-2 col-span-2 rounded py-3 pl-10"
+                      type="text"
                       name=""
                       id="clothes-input"
                     />
                   </div>
                 </div>
+                <p id="clothes-err" class="hidden">Enter positive number.</p>
                 <!-- row 4 -->
-                <div>
+                <div id="calculate-field">
                   <button
                     onclick="calculate()"
-                    class="bg-sky-500/100 text-white font-bold px-14 py-2 rounded"
+                    class="bg-blue-700 text-white font-bold px-14 py-2 rounded"
                   >
                     Calculate
                   </button>
+                  <p id="err-cal" class="hidden">
+                    Expenses is gatter then balance.
+                  </p>
                 </div>
               </div>
             </div>
@@ -119,19 +131,51 @@
                   <!-- col 2 -->
                   <input
                     class="bg-slate-300 col-span-2 rounded py-2 text-center"
-                    type="number"
+                    type="text"
                     name=""
                     id="percentage-input"
                   />
                   <!-- col 3 -->
                   <div>%</div>
                   <!-- col 4 -->
-                  <button
+                  <!-- <button
                     onclick="saveCalculation()"
                     class="bg-sky-500/100 col-span-2 text-white font-bold px-8 py-2 rounded"
+                    disabled
                   >
                     Save
-                  </button>
+                  </button> -->
+                  <div>
+                    <button
+                      id="save-btn"
+                      class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                    >
+                      Save
+                    </button>
+                    <div
+                      id="save-btn-tooltip"
+                      role="tooltip"
+                      class="inline-block absolute invisible z-10 py-2 px-3 text-sm font-medium text-white bg-gray-900 rounded-lg shadow-sm opacity-0 transition-opacity duration-300 tooltip dark:bg-gray-700"
+                      style="
+                        position: absolute;
+                        inset: auto auto 0px 0px;
+                        margin: 0px;
+                        transform: translate(498px, -241px);
+                      "
+                      data-popper-placement="top"
+                    >
+                      Tooltip content
+                      <div
+                        class="tooltip-arrow"
+                        data-popper-arrow=""
+                        style="
+                          position: absolute;
+                          left: 0px;
+                          transform: translate(59px, 0px);
+                        "
+                      ></div>
+                    </div>
+                  </div>
                 </div>
               </div>
               <p class="text-xl font-bold py-3">
